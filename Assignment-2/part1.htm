@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Welcome!
+		</title>
+	</head>
+	
+	<body onload="do_game()">
+		<script>
+			var colors = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"]
+			var input, game_over, count;
+						
+			function do_game(){
+				var random_number = Math.random() * 10;
+				var target_index = Math.floor(random_number);
+				
+				target = colors[target_index];
+				alert("debug -> look up for " + target);
+				count = 0;
+				game_over = false;
+				while(!game_over){
+					count++;
+					input = prompt("I am thinking of one of these colors \n"
+										+ colors.join() + "\r\n"
+										+ "What color I am thinking of?");
+					if (input == target){
+						game_over = true;
+					}
+				}
+					
+			}
+				
+		</script>
+	</body>
+</html>
