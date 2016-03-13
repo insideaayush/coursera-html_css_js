@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta name="author" content="Aayush Gautam">
+		<title> Matching Game</title>
+		<style>
+			img, div {position: absolute}
+			div {width: 500px; height: 500px}
+			#rightside {left: 500px; border-left: 1px solid black}			
+		</style>
+	</head>
+	<body onload="generateFaces()">
+		<h1>Matching Game</h1>
+		<p>Click on the extra smiling face on the left. </p>
+		<div id="leftside">
+			
+		</div>
+		
+		<div id="rightside">
+			
+		</div>
+		<script>
+			var numberOfFaces = 5;
+			var theLeftSide = 
+				document.getElementById("leftside");
+			function generateFaces(){
+				for(var i = 0; i < 5;i++){
+					img = document.createElement("img");
+					img.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+					var a = Math.floor(Math.random() * 400);
+					var b = Math.floor(Math.random() * 400);
+					img.style.top = a 
+					img.style.left = b
+					theLeftSide.appendChild(img);		
+				}
+			}
+			
+		</script>
+	</body>	
+</html>

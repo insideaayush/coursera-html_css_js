@@ -24,13 +24,9 @@
 				document.getElementById("leftside");
 			var theRightSide = 
 				document.getElementById("rightside");	
-			var theBody = 
-				document.getElementsByTagName("body")[0];
-		
-			
 			
 			function generateFaces(){
-				for(var i = 0; i < numberOfFaces;i++){
+				for(var i = 0; i < 5;i++){
 					img = document.createElement("img");
 					img.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
 					var a = Math.floor(Math.random() * 400);
@@ -42,31 +38,7 @@
 				var leftSideImages = theLeftSide.cloneNode(true);
 				leftSideImages.removeChild(leftSideImages.lastChild);
 				theRightSide.appendChild(leftSideImages);
-				
-				theLeftSide.lastChild.onclick =
-					function nextLevel(onclick){
-						onclick.stopPropagation();
-						numberOfFaces += 5;
-						while(theLeftSide.firstChild){
-							theLeftSide.removeChild(theLeftSide.firstChild);
-						}
-						
-						while(theRightSide.firstChild){
-							theRightSide.removeChild(theRightSide.firstChild);
-						}
-						
-						generateFaces();
-					};
 			}
-				
-			theBody.onclick = 
-				function gameOver(){
-					var score = (numberOfFaces / 5) -1;
-					alert("Game Over!\n"+ "Your Score = " + score); // score is just no of levels completed!
-					theBody.onclick = null;
-					theLeftSide.lastChild.onclick = null;
-				};
-				
 			
 		</script>
 	</body>	
